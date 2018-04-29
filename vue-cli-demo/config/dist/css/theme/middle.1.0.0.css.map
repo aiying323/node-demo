@@ -1,0 +1,1 @@
+{"version":3,"sources":["middle.1.0.0.css"],"names":[],"mappings":"AAAA,KACC,UAAW,AAGX,UAAY,CAFZ,AAID,QACE,YAAa,AACb,wBAA0B,CAAE","file":"middle.1.0.0.css","sourcesContent":[".box {\r\n\tcolor: red;\r\n}\n.box {\r\n\tcolor: pink;\r\n}\n.middle {\n  height: 100%;\n  background-color: #53bbe8; }\n"]}

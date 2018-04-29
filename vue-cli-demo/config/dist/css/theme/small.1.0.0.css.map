@@ -1,0 +1,1 @@
+{"version":3,"sources":["small.1.0.0.css"],"names":[],"mappings":"AAAA,KACC,UAAW,AAGX,UAAY,CAFZ,AAID,OACE,YAAa,AACb,wBAA0B,CAAE","file":"small.1.0.0.css","sourcesContent":[".box {\r\n\tcolor: red;\r\n}\n.box {\r\n\tcolor: pink;\r\n}\n.small {\n  height: 100%;\n  background-color: #25ad58; }\n"]}
