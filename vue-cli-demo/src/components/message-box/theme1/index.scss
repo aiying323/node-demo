@@ -1,0 +1,17 @@
+.main-box {
+	margin: 20px 0 ;
+}
+.theme1 {
+	margin: 0 auto;
+	width: 300px;
+	background-color: #fff;
+	border:1px solid #eee;
+	box-sizing: border-box;
+	border-radius: 4px;
+
+}
+.theme1 > .content{
+	margin: 20px;
+	height: 200px;
+	
+}
