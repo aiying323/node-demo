@@ -71,6 +71,14 @@ export default new Router({
           component: r => require.ensure([], () => r(require('@/views/second/report-index')), 'secondReport'),
         }
       ]
-    }
+    },
+    {
+      path: '/test',
+      name: 'test',
+      meta:{
+        auth:false
+      },
+      component: r => require.ensure([], () => r(require('@/views/test')), 'test')
+    },
   ]
 })

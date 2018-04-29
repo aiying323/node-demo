@@ -41,7 +41,8 @@ router.get('/getUserById', (req, res, next) => {
 		res.json({
 		  	status:200,
 		  	msg:state['200'],
-		  	result:u
+		  	result:u,
+		  	data:JSON.stringify(u)
 		});
 		res.end();
 
@@ -152,7 +153,7 @@ router.post('/deleteUser', (req, res, next) => {
 	time: 2018-04-29
 */
 router.post('/insert', (req, res, next) => {
-	let id = util.getMaxId('name',list);
+	let id = util.getMaxId('id',list);
 	let item = req.body;
 	item.id = id;
 	list.push(item);

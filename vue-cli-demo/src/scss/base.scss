@@ -8,6 +8,7 @@ html {
 	padding: 0;
 	width: 100%;
 	height: 100%;
+	text-align: left;
 	font-size: 0;
 	font-family: 'Microsoft YaHei', 'Avenir', Helvetica, Arial, sans-serif;
 
@@ -27,6 +28,7 @@ li{
 	margin: 0;
 	padding: 0;
 	font-size: 12px;
+	text-align: left;
 	font-family: 'Microsoft YaHei', 'Avenir', Helvetica, Arial, sans-serif;
 }
 
@@ -35,7 +37,7 @@ dt,
 span,
 samp,
 strong {
-	font-size: 0;
+	text-align: left;
 	font-weight: normal;
 	font-family: 'Microsoft YaHei', 'Avenir', Helvetica, Arial, sans-serif;
 }
@@ -47,6 +49,7 @@ h4,
 h5,
 h6 {
 	display: block;
+	 text-align: left;
 	font-weight: normal;
 }
 ul{
