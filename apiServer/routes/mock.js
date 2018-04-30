@@ -80,12 +80,18 @@ router.get('/getUserById', (req, res, next) => {
 	time: 2018-04-29
 */
 router.get('/getUsersPaging', (req, res, next) => {
+	list.sort((a,b)=>{
+      return parseInt(a['id']) - parseInt(b['id']);
+    })
 	let ulist=util.paging(req.query.pageNo,req.query.pageSize,list);
+
 	res.json({
 	  	status:200,
 	  	msg:state['200'],
 	  	result:ulist,
-	  	totalCount:ulist.length
+	  	totalCount:list.length,
+	  	pageNo:req.query.pageNo != null && req.query.pageNo > 1? req.query.pageNo : 1,
+	  	pageSize:req.query.pageSize != null ? req.query.pageSize : list.length
 	});
 	res.end();
 });
@@ -115,11 +121,17 @@ router.post('/deleteUser', (req, res, next) => {
 	let index=util.getIndex('id',req.body.id,list);
 	if(index >= 0){
 		list.splice(index,1);
+		list.sort((a,b)=>{
+	      return parseInt(a['id']) - parseInt(b['id']);
+	    })
+		let ulist=util.paging(1,req.body.pageSize,list);
 		res.json({
 		  	status:9006,
 		  	msg:state['9006'],
-		  	result:list,
-		  	totalCount:list.length
+		  	result:ulist,
+		  	totalCount:list.length,
+		  	pageNo:1,
+	  		pageSize:req.body.pageSize != null ? req.body.pageSize : list.length
 		});
 	}else{
 		res.json({
@@ -157,11 +169,19 @@ router.post('/insert', (req, res, next) => {
 	let item = req.body;
 	item.id = id;
 	list.push(item);
+	list.sort((a,b)=>{
+      return parseInt(a['id']) - parseInt(b['id']);
+    })
+	let ulist=util.paging(1,req.body.pageSize,list);
+
+	/*重新排序*/
 	res.json({
 	  	status:9003,
 	  	msg:state['9003'],
-	  	result:list,
-	  	totalCount:list.length
+	  	result:ulist,
+	  	totalCount:list.length,
+	  	pageNo:1,
+  		pageSize:req.body.pageSize != null ? req.body.pageSize : list.length
 	});
 });
 
@@ -190,14 +210,20 @@ router.post('/insert', (req, res, next) => {
 	time: 2018-04-29
 */
 router.post('/update', (req, res, next) => {
+	list.sort((a,b)=>{
+      return parseInt(a['id']) - parseInt(b['id']);
+    })
 	let index=util.getIndex('id',req.body.id,list);
 	if(index >= 0){
 		list[index] = req.body;
+		let ulist=util.paging(req.body.pageNo,req.body.pageSize,list);
 		res.json({
 		  	status:9004,
 		  	msg:state['9004'],
-		  	result:list,
-		  	totalCount:list.length
+		  	result:ulist,
+		  	totalCount:list.length,
+		  	pageNo:req.body.pageNo != null && req.body.pageNo > 1? req.body.pageNo : 1,
+	  		pageSize:req.body.pageSize != null ? req.body.pageSize : list.length
 		});
 	}else{
 		res.json({
@@ -242,16 +268,18 @@ router.get('/queryWithPaging', (req, res, next) => {
 	attrArray = attrArray.filter((item) => {
 		return item !== 'pageSize' && item !== 'pageNo'
 	})
-	console.log("获取浏览器参数",attrArray);
+	list.sort((a,b)=>{
+      return parseInt(a['id']) - parseInt(b['id']);
+    })
 	let datas=util.queryWithObject(attrArray,req.query,list,0);
 	let ulist=util.paging(req.query.pageNo,req.query.pageSize,datas);
 	res.json({
 	  	status:200,
 	  	msg:state['200'],
 	  	result:ulist,
-	  	totalCount:ulist.length,
-	  	pageNo:req.query.pageNo,
-	  	pageSize:req.query.pageSize
+	  	totalCount:datas.length,
+	  	pageNo:req.query.pageNo != null && req.query.pageNo > 1? req.query.pageNo : 1,
+	  	pageSize:req.query.pageSize != null ? req.query.pageSize : list.length
 	});
 });
 exports = module.exports = router;

@@ -13,6 +13,9 @@ import components from './components/index'
 import privateComponents from './private-component/index'
 import './scss/base.scss'
 import testJson from './json/test.json';
+import ElementUI from 'element-ui';
+
+Vue.use(ElementUI);
 
 
 Vue.config.productionTip = false;

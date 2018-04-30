@@ -1,5 +1,5 @@
-import axios from 'axios'
-
+import axios from 'axios';
+import {Message} from 'element-ui';
 axios.defaults.timeout = 30000; // 响应时间
 //请求拦截
 axios.interceptors.request.use(config => {
@@ -18,11 +18,19 @@ axios.interceptors.request.use(config => {
 axios.interceptors.response.use(config => {
   return config
 }, err => {
-  //异常拦截
-  console.log('有错误了啦啦啦啦');
-  /*
-    console.log(err.response);
-  */
+  switch(err.response.status){
+    case 401:
+      Message.error("没有访问权限啦~~");
+      break;
+    case 404:
+      Message.error("该请求失踪啦~~");
+      break;
+    case 500:
+      Message.error("服务器崩溃啦~~");
+      break;
+    default:
+       Message.error("服务器维护中~~");
+  }
   return Promise.reject(err)
 })
 
