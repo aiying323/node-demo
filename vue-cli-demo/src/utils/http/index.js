@@ -29,7 +29,7 @@ axios.interceptors.response.use(config => {
       Message.error("服务器崩溃啦~~");
       break;
     default:
-       Message.error("服务器维护中~~");
+      Message.error("服务器维护中~~");
   }
   return Promise.reject(err)
 })

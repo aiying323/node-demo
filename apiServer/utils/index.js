@@ -35,10 +35,10 @@ let getOneObject = ((attrName,value,list) => {
 	if(!(list instanceof Array) || typeof attrName !== 'string'){
 		return {};
 	}
-	let obj=list.filter((item)=>{
-		return item[attrName] == value;
-	})
-	return obj.length > 0 ? obj[0] : {};
+
+	let obj = list.find( item => item[attrName] == value );
+
+	return obj != null ? obj : {};
 })
 
 /**
@@ -119,13 +119,9 @@ let getIndex = ((attrName, value, list) => {
 	if(!(list instanceof Array) || typeof attrName !== 'string'){
 		return {};
 	}
-	let i = -1;
-	list.forEach((item, index)=>{
-		if(item[attrName] == value){
-			i = index;
-			return;
-		}
-	})
+	
+	let i = list.findIndex(item => item[attrName] == value)
+	
 	return i;
 })
 
@@ -171,15 +167,13 @@ let getMaxId = ((attrName,list) => {
 	/**
 		如果有不为数字的就返回list.length
 	*/
-	let obj=list.filter((item)=>{
-		return isNaN(item[attrName]);
-	})
+	let obj=list.filter( item => isNaN(item[attrName]) );
 
 	/**
 		处理属性不是数字的情况
 	*/
 	if(obj.length > 0){
-		return list.length > 0 ? Date.parse(new Date())+1 : Date.parse(new Date());
+		return list.length > 0 ? Date.parse(new Date()) + 1 : Date.parse(new Date());
 	}else{
 		/**
 			处理属性值为数字的情况
@@ -193,7 +187,7 @@ let getMaxId = ((attrName,list) => {
 			}
 			return parseInt(b[attrName]) - parseInt(a[attrName]);
 		});
-		return parseInt(list[0][attrName])+1;		
+		return parseInt(list[0][attrName]) + 1;		
 	}
 	
 	
@@ -236,16 +230,13 @@ let queryWithObject = ((attrArray,item,list,type)=>{
 		如果item[attrArray[attr]]的值为null或者为'' 就清除一个这个查询条件
 	*/
 	if(type === 0){
-		attrArray = attrArray.filter((attr,index)=>{
-			return item[attr] != null && item[attr] !== '';
-		})
+		attrArray = attrArray.filter( attr => item[attr] != null && item[attr] !== '' );
 	}
 	/**
 		筛选符合条件的数据
 	*/
-	list = list.filter((data ,index)=>{
-		return item[attrArray[0]] == data[attrArray[0]];
-	})
+	list = list.filter( data => item[attrArray[0]] == data[attrArray[0]] );
+
 	/**
 		清除已经筛选过的条件
 	*/
@@ -254,6 +245,7 @@ let queryWithObject = ((attrArray,item,list,type)=>{
 		递归
 	*/
 	queryWithObject(attrArray,item,list,1);
+
 	return list;
 }) 
 

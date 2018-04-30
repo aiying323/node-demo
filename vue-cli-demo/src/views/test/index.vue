@@ -161,9 +161,7 @@ export default {
           let {id ,name ,data} = {id : item.id,name : item.name,data: '' };
           this.list.push({id,name,data});
         }); 
-        this.list = this.list.sort((a,b)=>{
-          return parseInt(a['id']) - parseInt(b['id']);
-        }); 
+        this.list = this.list.sort((a,b)=> parseInt(a['id']) - parseInt(b['id']) ); 
         this.total = res.data.totalCount;       
       });
     },

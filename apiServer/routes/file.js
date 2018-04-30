@@ -71,8 +71,8 @@ app.post('/file/upload', upload.single('test-upload'), (req, res) => {
 	// 没有附带文件
 	if (!req.file) {
 		res.json({ ok: false });
-	return;
-	}
+    return;
+  }
 
 	//拼接文件上传后的网络路径，
 	const url = `http://${req.headers.host}/images/${req.file.originalname}`;
