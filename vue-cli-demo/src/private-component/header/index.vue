@@ -6,6 +6,7 @@
             <router-link to="login">login</router-link>
             <router-link to="/">首页</router-link>
             <router-link to="/test">测试数据</router-link>
+            <router-link to="/testbg">测试背景</router-link>
             <a href="#" v-on:click="clickFn">执行回调</a>
             <a href="#" v-on:click="change">执行修改父组件值</a>
             <a href="#" v-on:click="clear">清除localstorage和vuex</a>

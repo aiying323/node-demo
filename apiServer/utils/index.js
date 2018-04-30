@@ -184,7 +184,7 @@ let getMaxId = ((attrName,list) => {
 		/**
 			处理属性值为数字的情况
 		*/
-		let sort = function(a , b){
+		list = list.sort((a , b) => {
 			if(a[attrName] == null){
 				a[attrName] = 0;
 			}
@@ -192,8 +192,7 @@ let getMaxId = ((attrName,list) => {
 				b[attrName] = 0;
 			}
 			return parseInt(b[attrName]) - parseInt(a[attrName]);
-		}
-		list = list.sort(sort);
+		});
 		return parseInt(list[0][attrName])+1;		
 	}
 	

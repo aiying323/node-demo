@@ -80,5 +80,13 @@ export default new Router({
       },
       component: r => require.ensure([], () => r(require('@/views/test')), 'test')
     },
+    {
+      path: '/testbg',
+      name: 'testBg',
+      meta:{
+        auth:false
+      },
+      component: r => require.ensure([], () => r(require('@/views/test/test-bg')), 'testBg')
+    },
   ]
 })

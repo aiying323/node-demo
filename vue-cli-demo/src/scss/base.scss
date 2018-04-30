@@ -60,3 +60,37 @@ ul{
 
 /*@import url('./animation.scss');*/
 /*@import url('./mixin.scss');*/
+/* 饿了吗ui 样式覆盖 */
+.el-message-positon{
+	top:46% !important;
+}
+.el-pagination.is-background .el-pager li:not(.disabled).active{
+	background: #008000;
+}
+.el-pager li.number:hover{
+	color: #008000 !important;
+}
+.plus-reduce-tree .el-tree-node__expand-icon{
+ 	margin-right: 5px;
+ 	background: url('../assets/images/plus-reduce.fw.png');
+ 	background-position: 16px 0;
+	width: 4px;
+	height: 4px
+}
+.plus-reduce-tree .el-icon-caret-right:before{
+	content: '' !important;
+}
+.plus-reduce-tree .el-tree-node__expand-icon.expanded{
+	transform: rotate(180deg);
+}
+.plus-reduce-tree .expanded{
+ 	margin-right: 5px;
+	background: url('../assets/images/plus-reduce.fw.png');
+
+	width: 4px;
+	height: 4px
+}
+
+.plus-reduce-tree .is-leaf{
+	background: none;
+}
