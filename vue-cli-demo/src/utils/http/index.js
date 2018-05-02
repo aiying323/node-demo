@@ -18,7 +18,10 @@ axios.interceptors.request.use(config => {
 axios.interceptors.response.use(config => {
   return config
 }, err => {
-  switch(err.response.status){
+  if(!err.response){
+    Message.error("服务器维护中~~");
+  }else{
+    switch(err.response.status){
     case 401:
       Message.error("没有访问权限啦~~");
       break;
@@ -31,6 +34,8 @@ axios.interceptors.response.use(config => {
     default:
       Message.error("服务器维护中~~");
   }
+  }
+  
   return Promise.reject(err)
 })
 

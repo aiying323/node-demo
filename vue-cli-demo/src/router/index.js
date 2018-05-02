@@ -14,11 +14,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'homeIndex',
       meta:{
         auth:false
       },
-      component: r => require.ensure([], () => r(require('@/views/HelloWorld')), 'HelloWorld')
+      component: r => require.ensure([], () => r(require('@/views/index')), 'index')
+    },
+    {
+      path: '/helloWorld',
+      name: 'helloWorld',
+      meta:{
+        auth:false
+      },
+      component: r => require.ensure([], () => r(require('@/views/hello-world')), 'helloWorld')
     },
     {
       path: '/login',
@@ -34,7 +42,7 @@ export default new Router({
       meta:{
         auth:false
       },
-      component: r => require.ensure([], () => r(require('@/views/index')), 'index'),
+      component: r => require.ensure([], () => r(require('@/views/second/index')), 'index'),
       children: [
         {
           path: '/second/set',

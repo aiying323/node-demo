@@ -23,7 +23,7 @@
 <script>
 
 export default {
-  name: 'HelloWorld',
+  name: 'helloWorld',
   data () {
     return {
       msg: process.env.http.root,
