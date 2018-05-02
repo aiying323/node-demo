@@ -154,5 +154,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.hello-world{
+  padding:30px;
+}
 //  @import "../static/scss/helloWorld.scss";
 </style>

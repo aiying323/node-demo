@@ -14,6 +14,9 @@ import privateComponents from './private-component/index'
 import './scss/base.scss'
 import testJson from './json/test.json';
 import ElementUI from 'element-ui';
+import echarts from 'echarts';
+
+Vue.prototype.$echarts = echarts;
 
 Vue.use(ElementUI);
 
