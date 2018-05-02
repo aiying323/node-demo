@@ -1,7 +1,8 @@
 <template>
   <article class="index">
+    <home-header-index></home-header-index>
     <section class="box">
-     index
+      <router-view></router-view>  
     </section>
   </article>
 </template>
@@ -11,7 +12,6 @@ export default {
   name: 'homeIndex',
   data () {
     return {
-      msg: process.env.http.root
     }
   },
   created () {

@@ -9,17 +9,17 @@
 yarn add node-sass
 yarn upgrade
 
-# npm install
+# cnpm install
 
 # serve with hot reload at localhost:8080
-yarn run dev
-#npm run dev
+#yarn run dev
+cnpm run dev
 
 # build for production with minification
-npm run build
+cnpm run build
 
 # build for test with minification
-npm run test
+cnpm run test
 
 ```
 
@@ -38,5 +38,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
  	Utils：用于存放工具类如时间格式处理、字符串格式处理、请求拦截处理之类的脚本文件
  	Views：用于存放业务页面相关逻辑代码文件
  	项目下static：用于存放外部插件文件
-	 
+
+# cnpm安装：
+ npm install -g cnpm --registry=https://registry.npm.taobao.org
+# 饿了吗ui的安装 
+# cnpm install element-ui -s
+
+# echarts 安装
+cnpm install echarts -S
 

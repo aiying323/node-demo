@@ -7,7 +7,6 @@
         <router-link to="/second/report"> <span class="set-btn"> 点击我有惊喜2 </span> </router-link>  
         <router-link to="/">   <span class="set-btn"> 首页 </span>  </router-link>   
       </nav>  
-      </nav>  
       <router-view></router-view>  
     </section>
   </article>

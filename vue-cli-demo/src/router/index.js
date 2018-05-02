@@ -18,8 +18,23 @@ export default new Router({
       meta:{
         auth:false
       },
-      component: r => require.ensure([], () => r(require('@/views/index')), 'index')
+      component: r => require.ensure([], () => r(require('@/views/index')), 'index'),
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          meta:{
+            auth:false
+          },
+          component: r => require.ensure([], () => r(require('@/views/home/index')), 'home'),
+        }
+      ]
     },
+
+
+
+
+
     {
       path: '/helloWorld',
       name: 'helloWorld',

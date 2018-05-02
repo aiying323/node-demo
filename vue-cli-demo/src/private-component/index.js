@@ -1,8 +1,9 @@
 import headerIndex from './header/index.vue'
-
+import homeHeaderIndex from './home-header/index.vue'
 
 const components = [
-	headerIndex
+	headerIndex,
+	homeHeaderIndex
 ];
 
 export default {

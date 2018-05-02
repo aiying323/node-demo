@@ -12,7 +12,15 @@ import { getKernelVersion , getUrlParams } from './utils/browser/index'
 import components from './components/index'
 import privateComponents from './private-component/index'
 import './scss/base.scss'
+import ElementUI from 'element-ui';
+import echarts from 'echarts';
 
+
+//集成饿了吗ui
+Vue.use(ElementUI);
+
+//使用echarts
+Vue.prototype.$echarts = echarts;
 
 Vue.config.productionTip = false;
 //加载store库
