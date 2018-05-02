@@ -42,8 +42,14 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # cnpm安装：
  npm install -g cnpm --registry=https://registry.npm.taobao.org
 # 饿了吗ui的安装 
-# cnpm install element-ui -s
+# cnpm install element-ui -s --registry=https://registry.npm.taobao.org
 
 # echarts 安装
-cnpm install echarts -S
+# cnpm install echarts -s --registry=https://registry.npm.taobao.org
+
+# 如果cnpm安装nodemode失败 请安装yarn-0.21.3.msi
+# 执行一下命令：
+# 1、 yarn add node-sass
+# 2、 yarn upgrade
+# 3、 yarn add element-ui
 
