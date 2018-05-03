@@ -39,13 +39,15 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
  	Views：用于存放业务页面相关逻辑代码文件
  	项目下static：用于存放外部插件文件
 
+
 # cnpm安装：
  npm install -g cnpm --registry=https://registry.npm.taobao.org
- cnpm install 
+ cnpm install --registry=https://registry.npm.taobao.org
+# ios 下如果 安装没有报错即不需要执行 如果安装babel-runtime报错了还需要安装 npm i babel-runtime -S
+# 安装之后如果运行报错则删掉node-modules文件夹 用cnpm 重新安装一次即可
 
 # 如果cnpm安装nodemodule失败 请安装yarn-0.21.3.msi
 # 执行一下命令：
-# 1、 yarn add node-sass
+# 1、 yarn add node-sass@4.9.0
 # 2、 yarn upgrade
-
-
+#注意：如果后期开发过程中，团队有人添加了插件上去 更新了package.json文件，则需要大家cnpm install 一下将新的依赖文件下载下来

@@ -3,6 +3,7 @@ export default function(router, store) {
     /**
       这里可以添加统一处理url参数的方法
     */
+    console.log(to);
     next();
    /* if (to.meta.auth) {
       if (store.getters.user.token !== null && store.getters.user.token !== '') {
