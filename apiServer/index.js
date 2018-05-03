@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = require('./app.js');
 
-const server = app.listen(8081,'192.168.158.235', function () {
+const server = app.listen(8081,'127.0.0.1', function () {
  
   const host = server.address().address
   const port = server.address().port
