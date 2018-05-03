@@ -47,7 +47,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # echarts 安装
 # cnpm install echarts -s --registry=https://registry.npm.taobao.org
 
-# 如果cnpm安装nodemode失败 请安装yarn-0.21.3.msi
+# 如果cnpm安装nodemodule失败 请安装yarn-0.21.3.msi
 # 执行一下命令：
 # 1、 yarn add node-sass
 # 2、 yarn upgrade
