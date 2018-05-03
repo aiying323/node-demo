@@ -32,7 +32,7 @@ this.$store.dispatch(USER_CLEAR);
     	#新增的store类添加进来
     	xx: state => state.xx
   	}
-	
+  }
 
 #示例代码：
 import Vue from 'vue'

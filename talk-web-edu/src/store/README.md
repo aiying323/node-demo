@@ -33,7 +33,7 @@ this.$store.dispatch(USER_CLEAR);
       xx: state => state.xx
     }
   
-
+  }
 #示例代码：
 import Vue from 'vue'
 import local from './local'
